@@ -7,18 +7,19 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Chakra Petch, sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     padding-top: 80px;
     background-color: #111;
     overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: Days One, sans-serif;
+    font-family: "Days One", sans-serif;
 }
 
 .navbar .nav-link.hov {
@@ -30,7 +31,7 @@ h6 {
 }
 
 .navbar span {
-    color: yellow;
+    color: rgb(153, 214, 10);
     margin-right: 15px;
 
 }
@@ -50,9 +51,11 @@ h6 {
 .HOME {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.9)), url("./imagesss/Copy\ of\ hero-bg.jpg");
+    background-attachment: scroll, fixed;
     background-size: cover;
     background-position: center;
     color: white;
+    padding-top: 70px;
 
 }
 
@@ -69,8 +72,40 @@ p {
     color: red;
 }
 
-.container {
+#Home {
     padding-top: 70px;
+}
+
+.navbar-toggler {
+    background-color: #f0f1ee;
+}
+
+@media(max-width:575px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .but2 {
+        margin-block: 15px;
+    }
+
+    .but22 {
+        margin-block: 15px;
+    }
+
+}
+
+@media(max-width:991px) {
+
+    .but2,
+    .but22 {
+        margin-bottom: 15px;
+    }
+
 }
 
 .pic {
@@ -100,7 +135,7 @@ p {
     border-radius: 15px;
     border: 2px solid rgb(203 254 28);
     color: rgb(203 254 28);
-    ;
+
 }
 
 .btn-shine {
@@ -109,7 +144,9 @@ p {
     z-index: 0;
 }
 
-
+.navbar li {
+    padding-bottom: 0;
+}
 
 .but22:hover {
     color: black;
@@ -226,29 +263,29 @@ p {
 .card {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    transition: 0.3s ease;
 }
-@media(min-width:768px){.card{width:33.33%;}}
 
 
 .card img {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    display: block;
+
 }
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, rgba(180, 220, 0, 0.4), rgba(180, 255, 0, 0));
     border: 2px solid yellowgreen;
     opacity: 0;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
 }
 
 .card:hover .overlay {
@@ -257,13 +294,13 @@ p {
 
 
 .overlay h4 {
-    position:absolute;
+    position: absolute;
     z-index: 1;
     top: 300px;
     left: 10px;
     font-size: 15px;
     color: black;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
@@ -277,16 +314,17 @@ p {
     font-weight: 400;
 }
 
-.overlay i {
-    color: yellowgreen;
-    font-weight: 600;
+#OUR-GAMES .overlay i {
+    color: rgb(106, 230, 6);
+    font-weight: 800;
+    background-color: none;
 }
 
 .dataa {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 50px;
+    gap: 40px;
     margin-top: 30px;
 }
 
@@ -296,11 +334,16 @@ p {
     margin-bottom: 0;
 }
 
-.head2 h2 {
+h2 {
     font-size: 20px;
     margin-top: 0px;
     padding-bottom: 0;
     position: relative;
+}
+@media(max-width:565px){
+#What-We-Do p{font-size:25px;}
+
+
 }
 
 h2::before,
@@ -323,6 +366,19 @@ h2::after {
     margin-left: 15px;
 }
 
+@media(max-width:575px) {
+    h2::before {
+
+        margin-right: 50px;
+    }
+
+    h2::after {
+
+        margin-left: 50px;
+    }
+}
+
+
 .head2 {
     padding-top: 60px;
 }
@@ -331,22 +387,23 @@ h2::after {
     color: yellowgreen;
 }
 
-.cards {
+#What-We-Do .cards {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: 300px;
-    gap: 10px;
+    gap: 15px;
     background-color: rgb(26 26 26);
     border: 2px solid rgb(75, 74, 74);
     border-radius: 15px;
-
+position: relative;
     transition: 0.1s ease;
-    position: relative;
+    overflow:hidden ;
+
 }
 
-.cards::before {
+#What-We-Do .cards::before {
     content: "";
     position: absolute;
     top: -20px;
@@ -358,7 +415,7 @@ h2::after {
 
 }
 
-.cards::after {
+#What-We-Do .cards::after {
     content: "";
     position: absolute;
     bottom: -20px;
@@ -371,25 +428,26 @@ h2::after {
 }
 
 
-.cards:hover::before {
-    border-color: transparent transparent #9acd32 transparent;
+#What-We-Do .cards:hover::before {
+    border-color: transparent transparent #9ae407 transparent;
     top: 10px;
     left: 10px;
 }
 
-.cards:hover::after {
-    border-color: #9acd32 transparent transparent transparent;
+#What-We-Do .cards:hover::after {
+    border-color: #93da07 transparent transparent transparent;
     bottom: 10px;
     right: 10px;
 }
 
-.cards:hover {
+#What-We-Do .cards:hover {
     border: 2px solid yellowgreen;
 }
 
-.cards:hover i {
+#What-We-Do .cards:hover i {
     background-color: yellowgreen;
     color: black;
+
 }
 
 .allcards {
@@ -402,7 +460,7 @@ h2::after {
     margin-top: 30px;
 }
 
-.cards i {
+#What-We-Do .cards i {
     font-size: 35px;
     color: #9acd32;
     margin-top: 60px;
@@ -411,30 +469,26 @@ h2::after {
     background-color: rgb(30 41 57);
     transition: 0.1s ease;
     transition-delay: 0s;
+
 }
 
-.cards h5,
+#What-We-Do .cards h5,
 h6 {
     font-size: 25px;
     font-weight: 700;
     color: white;
-}
-
-.cards h5 {
     text-align: center;
 }
 
-.cards h6 {
+#What-We-Do .cards h5 {
+    text-align: center;
+}
+
+#What-We-Do .cards h6 {
     margin-bottom: 60px;
 }
 
 
-.container {
-
-    margin: auto;
-    background: linear-gradient(90deg, transparent, var(--color-primary)20%,
-            var(--color-primary)80%, transparent);
-}
 
 .cards img {
     width: 100%;
@@ -484,7 +538,7 @@ h6 {
 
 .logos img {
     border-radius: 10px;
-    width:100px;
+    width: 100px;
 }
 
 hr {
@@ -495,11 +549,11 @@ hr {
 }
 
 .profile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-gap:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding-block: 40px;
 }
 
@@ -512,13 +566,13 @@ small {
 }
 
 .profile .card {
-    width:22%;
-  height: 320px;
+    padding: 0;
+    height: 400px;
     position: relative;
     border-radius: 10px;
     filter: grayscale(100%);
     transition: 0.4s ease;
-overflow: hidden;
+    overflow: hidden;
 }
 
 .profile .card:hover {
@@ -534,8 +588,8 @@ overflow: hidden;
 }
 
 .profile img {
-    width: 100%;
 
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -549,7 +603,7 @@ overflow: hidden;
     width: fit-content;
     font-size: 20px;
     top: 80px;
-    right:-30px;
+    right: -30px;
     transform: rotate(90deg);
     z-index: 100;
 }
@@ -558,20 +612,18 @@ overflow: hidden;
     margin-bottom: 0;
 }
 
-.row .card {
-    background-color: rgb(30 41 57);
-    margin-top: 50px;
-    border-radius: 15px;
-}
 
-.row .card i {
-    background-color: yellow;
-    padding: 15px;
+
+#Contact-Us .row .way i {
+    background-color: rgb(156, 221, 3);
+    padding: 10px;
     border-radius: 50%;
+    margin: 10px;
+    font-size: 20px;
 }
 
 .row .card h5 {
-    color: white;
+    color: rgb(20, 20, 19);
     font-size: 25px;
     font-weight: 600;
 }
@@ -589,10 +641,11 @@ overflow: hidden;
 
 .final .social i {
     background-color: rgb(8, 8, 8);
-    padding: 15px;
+    padding: 10px;
     color: greenyellow;
     margin-right: 20px;
-    font-size: 20px;
+    font-size: 15px;
+    border-radius: 10px;
 
 }
 
@@ -604,7 +657,7 @@ overflow: hidden;
 }
 
 .contact {
-    margin-top: 50px;
+    margin-top: x;
     border-radius: 15px;
     background-color: rgb(30 41 57);
     padding: 15px;
@@ -629,20 +682,26 @@ select {
     font-weight: 200;
     border-radius: 10px;
 }
-.sub{width: 100%;
+
+.sub {
+    width: 100%;
     font-size: 20px;
     padding: 10px;
     font-weight: 200;
     border-radius: 10px;
-background: linear-gradient(to right, greenyellow 40%, rgb(4, 224, 103));
-border:1px solid white;cursor: pointer;}
-.form-control{font-size: 20px;}
-
-
-.logo {
-    width: 25%;
-  
+    background: linear-gradient(to right, greenyellow 40%, rgb(4, 224, 103));
+    border: 1px solid white;
+    cursor: pointer;
 }
+
+.form-control {
+    font-size: 20px;
+}
+
+
+
+
+
 
 .header {
     font-size: 25px;
@@ -652,39 +711,40 @@ border:1px solid white;cursor: pointer;}
 
 .logo p {
     font-size: 18px;
-   color: #7e7c7c;
+    color: #7e7c7c;
 }
 
 .header i {
-  
+
 
     padding: 10px;
-    color:yellowgreen;
+    color: yellowgreen;
 }
 
 .categ2 {
-    width: 25%;
+
     margin-top: 25px;
     text-align: center;
 
 }
 
-.categ2 h2 {
+.categ2 h6 {
     font-size: 25px;
     font-weight: 600;
 }
 
-ul {
+footer ul {
     list-style: none;
 }
 
-li {
+footer li {
     padding-bottom: 15px;
     font-size: 18px;
     font-weight: 400;
+    text-align:center;
 }
 
-li:hover {
+footer li:hover {
     color: yellow;
 }
 
@@ -694,17 +754,18 @@ hr {
     margin-block: 30px;
     height: 3px;
     background-color: white;
-    box-shadow:3px 3px 9px white;
+    box-shadow: 3px 3px 9px white;
 }
 
 .end {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-weight: 200;
 }
-
+#Our-Team{padding-top: 70px;}
+#What-We-Do{padding-top: 70px;}
 .end p {
     color: white;
 }
@@ -722,4 +783,8 @@ hr {
     color: yellow;
 }
 
-.header span{color: yellowgreen;}
+.header span {
+    color: yellowgreen;
+}
+@media(max-width:576px){
+.logos img{width:50px;}}
